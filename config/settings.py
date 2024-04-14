@@ -51,12 +51,15 @@ INSTALLED_APPS = [
     'pages',
 ]
 
+SITE_ID = 1
+
+
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
-SITE_ID = 1
+
 
 
 MIDDLEWARE = (
@@ -162,4 +165,13 @@ LOGIN_REDIRECT_URL = 'home'
 # crispy-config
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+# allauth-config
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_USER_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL = True
+
 
